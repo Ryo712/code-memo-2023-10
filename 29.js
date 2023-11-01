@@ -14,7 +14,7 @@ export async function GET() {
   const topics = await Topic.find();
   return NextResponse.json({ topics });
 }
-//HTTP GETリクエストを処理します。すべてのトピックを取得するために使用されます。
+//Topic.find メソッドを使用して、データベース内のすべてのトピックを検索し、それらのトピックを取得します。
 export async function DELETE(request) {
   const id = request.nextUrl.searchParams.get("id");
   await connectMongoDB();
